@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        maven { url "http://platform-acceleration-lab-maven.s3.amazonaws.com" }
+        jcenter()
+    }
+
+    dependencies {
+        classpath "io.pivotal.pal.assignments:assignments-plugin:4.7.1"
+    }
+}
+
+apply plugin: "io.pivotal.pal.assignments.plugin"
+
+assignments {
+    apiUrl = "https://assignments.education.pivotal.io"
+    emails = [
+	"phani_kumar_a_v_n@dell.com", //update me
+        "apurv_singh@dell.com" // update me       
+    ]
+    courseCode = "CND_DOTNET"
+}
+
+defaultTasks "tasks"
